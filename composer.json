@@ -21,7 +21,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php" : "^7.3|^8.0",
+        "php": "^7.3|^8.0",
+        "almasaeed2010/adminlte": "~3.0",
+        "joshbrw/laravel-module-installer": "^2.0",
         "nwidart/laravel-modules": "^8.2"
     },
     "extra": {

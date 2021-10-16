@@ -9,8 +9,9 @@ mix.setPublicPath('../../public').mergeManifest();
 mix.js(__dirname + '/Resources/assets/js/app.js', 'js/backend.js')
     .sass( __dirname + '/Resources/assets/sass/app.scss', 'css/backend.css');
 
+
+mix.copyDirectory(__dirname + '/node_modules/admin-lte/dist/', '');
+
 if (mix.inProduction()) {
     mix.version();
 }
-
-mix.copyDirectory();
