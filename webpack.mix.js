@@ -12,3 +12,5 @@ mix.js(__dirname + '/Resources/assets/js/app.js', 'js/backend.js')
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.copyDirectory();
