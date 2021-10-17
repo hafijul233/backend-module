@@ -38,6 +38,7 @@ class BackendServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(MenuServiceProvider::class);
         $this->app->register(ObserverServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
     }
