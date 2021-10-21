@@ -9,5 +9,9 @@
     ],
     "aliases": {},
     "files": [],
-    "requires": []
+    "requires": [],
+    "minimumCoreVersion": "0.0.1",
+    "title": "",
+    "version":"0.0.1",
+    "author": "Hafijul islam"
 }
