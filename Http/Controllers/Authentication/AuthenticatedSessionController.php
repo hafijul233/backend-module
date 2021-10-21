@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Modules\Backend\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
@@ -13,7 +13,7 @@ use Illuminate\View\View;
 
 /**
  * Class AuthenticatedSessionController
- * @package App\Http\Controllers\Auth
+ * @package Modules\Backend\Http\Controllers\Authentication
  */
 class AuthenticatedSessionController extends Controller
 {

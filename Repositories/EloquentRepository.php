@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories;
+namespace Modules\Backend\Repositories;
 
 
 use Exception;
@@ -14,7 +14,7 @@ use PDOException;
 
 /**
  * Class EloquentRepository
- * @package App\Repositories
+ * @package Modules\Backend\Repositories
  */
 abstract class EloquentRepository implements RepositoryInterface
 {

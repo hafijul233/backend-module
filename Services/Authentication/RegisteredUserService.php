@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Auth;
+namespace Modules\Backend\Services\Authentication;
 
 
 use App\Http\Requests\Auth\RegisterRequest;

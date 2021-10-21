@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Auth;
+namespace Modules\Backend\Services\Authentication;
 
 
 use App\Http\Requests\Auth\LoginRequest;
@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 /**
  * Class AuthenticatedSessionService
- * @package App\Services\Auth
+ * @package Modules\Backend\Services\Authentication
  */
 class AuthenticatedSessionService
 {

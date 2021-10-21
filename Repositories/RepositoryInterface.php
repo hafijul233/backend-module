@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories;
+namespace Modules\Backend\Repositories;
 
 
 use Exception;
