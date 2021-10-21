@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'name' => 'Backend'
+    'name' => 'Backend',
+
+    'home_url' => '/backend/dashboard'
 ];

@@ -5,7 +5,7 @@ namespace Modules\Backend\Http\Controllers\Authentication;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Providers\RouteServiceProvider;
-use App\Services\Auth\RegisteredUserService;
+use Modules\Backend\Services\Authentication\RegisteredUserService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;

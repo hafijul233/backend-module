@@ -4,8 +4,7 @@ namespace Modules\Backend\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
-use App\Services\Auth\AuthenticatedSessionService;
+use Modules\Backend\Services\Authentication\AuthenticatedSessionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +51,7 @@ class AuthenticatedSessionController extends Controller
 
         if ($confirm['status'] == true) {
             toastr($confirm['message'], $confirm['level']);
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(config('backend.config.home_url'));
         } else {
             toastr($confirm['message'], $confirm['level']);
             return redirect()->back();

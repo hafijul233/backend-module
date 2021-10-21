@@ -11,13 +11,11 @@
         {
             "name": "Hafijul Islam",
             "email": "hafijul233@gmail.com",
-            "homepage": "http://hafijulislam.me"
+            "homepage": "http://www.hafijulislam.me"
         }
     ],
     "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+        "preferred-install": "dist"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -26,7 +24,8 @@
         "almasaeed2010/adminlte": "~3.0",
         "joshbrw/laravel-module-installer": "^2.0",
         "nwidart/laravel-modules": "^8.2",
-        "spatie/laravel-menu": "^3.7"
+        "spatie/laravel-menu": "^3.7",
+        "yoeunes/notify": "^1.0"
     },
     "extra": {
         "laravel": {
@@ -42,7 +41,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Modules\\Backend\\Tests": "Tests/"
+            "Modules\\Backend\\Tests\\": "Tests/"
         }
     }
 }
