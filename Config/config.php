@@ -3,5 +3,5 @@
 return [
     'name' => 'Backend',
 
-    'home_url' => '/backend/dashboard'
+    'home_url' => '/backend/dashboard',
 ];
