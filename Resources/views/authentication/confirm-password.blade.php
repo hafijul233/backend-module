@@ -1,6 +1,6 @@
 @extends('backend::layouts.guest')
 
-@section('title', 'Register')
+@section('title', 'Confirm Password')
 
 @push('meta')
 

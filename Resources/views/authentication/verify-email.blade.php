@@ -1,3 +1,74 @@
+@extends('backend::layouts.guest')
+
+@section('title', 'Forgot Password')
+
+@push('meta')
+
+@endpush
+
+@push('webfont')
+
+@endpush
+
+@push('icon')
+
+@endpush
+
+@push('plugin-style')
+
+@endpush
+
+@push('inline-style')
+
+@endpush
+
+@push('head-script')
+
+@endpush
+
+@section('body-class', 'login-page')
+
+@section('content')
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../../index2.html"><b>Admin</b>LTE</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
+
+                <form action="recover-password.html" method="post">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Request new password</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <p class="mt-3 mb-1">
+                    <a href="login.html">Login</a>
+                </p>
+                <p class="mb-0">
+                    <a href="register.html" class="text-center">Register a new membership</a>
+                </p>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+@endsection
+
+
+@push('plugin-script')
+
+@endpush
+
+@push('page-script')
+
+@endpush
+{{--
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -37,3 +108,4 @@
         </div>
     </x-auth-card>
 </x-guest-layout>
+--}}
