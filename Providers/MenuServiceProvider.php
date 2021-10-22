@@ -2,7 +2,9 @@
 
 namespace Modules\Backend\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Modules\Backend\View\Composers\MainSidebarComposer;
 
 class MenuServiceProvider extends ServiceProvider
 {
@@ -24,5 +26,15 @@ class MenuServiceProvider extends ServiceProvider
     public function provides()
     {
         return [];
+    }
+
+    /**
+     *
+     */
+    public function boot()
+    {
+        // Using class based composers...
+        View::composer('backend::partials.menu-sidebar', MainSidebarComposer::class);
+
     }
 }
