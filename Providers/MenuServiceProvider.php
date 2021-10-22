@@ -5,6 +5,8 @@ namespace Modules\Backend\Providers;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Modules\Backend\View\Composers\MainSidebarComposer;
+use Spatie\Menu\Laravel\Facades\Menu;
+use Spatie\Menu\Laravel\Link;
 
 class MenuServiceProvider extends ServiceProvider
 {
@@ -35,6 +37,41 @@ class MenuServiceProvider extends ServiceProvider
     {
         // Using class based composers...
         View::composer('backend::partials.menu-sidebar', MainSidebarComposer::class);
+        $this->registerComponentMenu();
+    }
 
+    protected function registerComponentMenu() {
+        Menu::macro('backend', function () {
+            return Menu::new()
+                ->addClass('nav nav-treeview')
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+                ->add(Link::to('/', '<i class="far fa-circle nav-icon"></i><p>Inactive Page</p>')
+                    ->addClass('nav-link')
+                    ->addParentClass('nav-item'))
+                ->wrap('li', ['class' => 'nav-item'])
+                ->setActiveFromRequest();
+        });
     }
 }
