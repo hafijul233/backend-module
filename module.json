@@ -5,7 +5,10 @@
     "keywords": [],
     "priority": 0,
     "providers": [
-        "Modules\\Backend\\Providers\\BackendServiceProvider"
+        "Modules\\Backend\\Providers\\BackendServiceProvider",
+        "Modules\\Backend\\Providers\\FormServiceProvider",
+        "Modules\\Backend\\Providers\\HtmlServiceProvider",
+        "Modules\\Backend\\Providers\\MenuServiceProvider"
     ],
     "aliases": {},
     "files": [],

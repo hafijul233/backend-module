@@ -3,7 +3,7 @@
 namespace Modules\Backend\Providers\Components;
 
 use Illuminate\Support\ServiceProvider;
-use Collective\HtmlFormFacade as Form;
+use Collective\Html\FormFacade as Form;
 
 /**
  * Class HorizontalFieldProvider

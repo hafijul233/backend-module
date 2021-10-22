@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+<head>
+    <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
+    <!-- meta Tags -->
+@include('backend::layouts.includes.meta')
+<!-- Web Font-->
+@include('backend::layouts.includes.webfont')
+<!-- Icon -->
+@include('backend::layouts.includes.icon')
+<!-- Plugins -->
+@include('backend::layouts.includes.plugin-style')
+<!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('modules/backend/assets/css/adminlte.min.css') }}">
+    <!-- Page Level Style -->
+@include('backend::layouts.includes.inline-style')
+<!-- Page Level Script -->
+    @include('backend::layouts.includes.head-script')
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            @yield('content')
         </div>
-    </body>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+@include('backend::partials.guest.footer')
+<!-- jQuery -->
+<script src="{{ asset('modules/backend/plugins/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('modules/backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Plugin JS -->
+@include('backend::layouts.includes.plugin-script')
+<!-- AdminLTE App -->
+<script src="{{ asset('modules/backend/assets/js/adminlte.min.js') }}"></script>
+<!-- inline js -->
+@include('backend::layouts.includes.head-script')
+</body>
 </html>

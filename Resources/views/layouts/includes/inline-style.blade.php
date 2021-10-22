@@ -1,0 +1,2 @@
+
+@stack('inline-style')

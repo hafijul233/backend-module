@@ -4,8 +4,7 @@ namespace Modules\Backend\Providers\Components;
 
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\ServiceProvider;
-use Collective\HtmlFormFacade as Form;
-use Collective\Html\HtmlFacade as Html;
+use Collective\Html\FormFacade as Form;
 
 class NormalFieldProvider extends ServiceProvider
 {

@@ -3,13 +3,14 @@
 namespace Modules\Backend\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\RegisterRequest;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Modules\Backend\Http\Requests\Authentication\RegisterRequest;
 use Modules\Backend\Services\Authentication\RegisteredUserService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
@@ -30,9 +31,9 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      *
-     * @return View
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
-    public function create(): View
+    public function create()
     {
         return view('backend::authentication.register');
     }

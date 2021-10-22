@@ -28,6 +28,7 @@ class BackendServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerPublicAssets();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+
     }
 
     /**
