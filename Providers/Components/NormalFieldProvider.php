@@ -47,7 +47,7 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nText', 'forms.normal.text', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+        Form::component('nText', 'backend::forms.normal.text', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
         /**
          * @parem string $name
          * @parem string $label
@@ -55,7 +55,7 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nEmail', 'forms.normal.email', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+        Form::component('nEmail', 'backend::forms.normal.email', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
 
         /**
          * @parem string $name
@@ -63,7 +63,7 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nPassword', 'forms.normal.password', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+        Form::component('nPassword', 'backend::forms.normal.password', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
 
         /**
          * @parem string $name
@@ -71,32 +71,7 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nRange', 'forms.normal.range', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
-
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('nSearch', 'forms.normal.search', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('nTel', 'forms.normal.tel', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('nNumber', 'forms.normal.number', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+        Form::component('nRange', 'backend::forms.normal.range', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
 
 
         /**
@@ -105,7 +80,23 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nDate', 'forms.normal.date', ['name', 'label', 'default' => date('Y-m-d'), 'required' => false, 'attributes' => []]);
+        Form::component('nSearch', 'backend::forms.normal.search', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('nTel', 'backend::forms.normal.tel', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('nNumber', 'backend::forms.normal.number', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
 
 
         /**
@@ -114,15 +105,7 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nUrl', 'forms.normal.url', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('nFile', 'forms.normal.file', ['name', 'label', 'default' => null, 'required' => false, 'preview' => [false, 100, '/img/logo-app.png'],'attributes' => []]);
+        Form::component('nDate', 'backend::forms.normal.date', ['name', 'label', 'default' => date('Y-m-d'), 'required' => false, 'attributes' => []]);
 
 
         /**
@@ -131,7 +114,24 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('nTextarea', 'forms.normal.textarea', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+        Form::component('nUrl', 'backend::forms.normal.url', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('nFile', 'backend::forms.normal.file', ['name', 'label', 'default' => null, 'required' => false, 'preview' => [false, 100, '/img/logo-app.png'],'attributes' => []]);
+
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('nTextarea', 'backend::forms.normal.textarea', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
 
 
 
@@ -145,7 +145,7 @@ class NormalFieldProvider extends ServiceProvider
          * @param  array  $optionsAttributes
          * @param  array  $optgroupsAttributes
          */
-        Form::component('nSelect', 'forms.normal.select', ['name', 'label', 'data', 'selected', 'required' => false, 'attributes' => []]);
+        Form::component('nSelect', 'backend::forms.normal.select', ['name', 'label', 'data', 'selected', 'required' => false, 'attributes' => []]);
 
         /**
          * Create a select range field.
@@ -158,7 +158,7 @@ class NormalFieldProvider extends ServiceProvider
          *
          * @return HtmlString
          */
-        Form::component('nSelectRange', 'forms.normal.selectrange', ['name', 'label', 'begin', 'end', 'selected', 'required' => false, 'attributes' => []]);
+        Form::component('nSelectRange', 'backend::forms.normal.selectrange', ['name', 'label', 'begin', 'end', 'selected', 'required' => false, 'attributes' => []]);
 
 
         /**
@@ -172,7 +172,7 @@ class NormalFieldProvider extends ServiceProvider
          *
          * @return mixed
          */
-        Form::component('nSelectYear', 'forms.normal.selectyear', ['name', 'label', 'begin', 'end', 'selected' => date('Y'), 'required' => false, 'attributes' => []]);
+        Form::component('nSelectYear', 'backend::forms.normal.selectyear', ['name', 'label', 'begin', 'end', 'selected' => date('Y'), 'required' => false, 'attributes' => []]);
 
 
         /**
@@ -185,7 +185,7 @@ class NormalFieldProvider extends ServiceProvider
          *
          * @return HtmlString
          */
-        Form::component('nSelectMonth', 'forms.normal.selectmonth', ['name', 'label', 'selected' => date('m'), 'required' => false, 'attributes' => []]);
+        Form::component('nSelectMonth', 'backend::forms.normal.selectmonth', ['name', 'label', 'selected' => date('m'), 'required' => false, 'attributes' => []]);
 
 
         /**
@@ -198,7 +198,7 @@ class NormalFieldProvider extends ServiceProvider
          *
          * @return HtmlString
          */
-        Form::component('nCheckbox', 'forms.normal.checkbox', ['name', 'label', 'default' => null, 'checked', 'required' => false, 'attributes' => []]);
+        Form::component('nCheckbox', 'backend::forms.normal.checkbox', ['name', 'label', 'default' => null, 'checked', 'required' => false, 'attributes' => []]);
 
 
 
@@ -212,6 +212,6 @@ class NormalFieldProvider extends ServiceProvider
          *
          * @return HtmlString
          */
-        Form::component('nRadio', 'forms.normal.radio', ['name', 'label', 'checked', 'required' => false, 'attributes' => []]);
+        Form::component('nRadio', 'backend::forms.normal.radio', ['name', 'label', 'checked', 'required' => false, 'attributes' => []]);
     }
 }

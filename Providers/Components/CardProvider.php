@@ -24,6 +24,6 @@ class CardProvider extends ServiceProvider
      */
     public function boot()
     {
-        Html::component('cardHeader', 'htmls.card-header', ['title', 'icon', 'short' => null]);
+        Html::component('cardHeader', 'backend::htmls.card-header', ['title', 'icon', 'short' => null]);
     }
 }

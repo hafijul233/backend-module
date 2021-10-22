@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Modules\Backend\Supports\Constant;
+use Modules\Backend\Supports\DefaultValue;
 
 class CreateUsersTable extends Migration
 {
@@ -22,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('force_pass_reset')->default(false);
             $table->string('remarks')->nullable();
-            $table->enum('enabled', ['yes', 'no'])->default('yes')->nullable();
+            $table->enum('enabled', array_keys(Constant::ENABLED_OPTIONS))->default(DefaultValue::ENABLED_OPTION)->nullable();
             $table->rememberToken();
             $table->foreignId('created_by')->index()->nullable();
             $table->foreignId('updated_by')->index()->nullable();

@@ -16,6 +16,9 @@ class BackendDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call(PermissionSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(RolePermissionSeeder::class);
+
     }
 }

@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
 class AuthenticatedSessionService
 {
     /**
-     * Handle an incoming authentication request.
+     * Handle an incoming auth request.
      *
      * @param LoginRequest $request
      * @return array

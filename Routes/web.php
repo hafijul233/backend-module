@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Modules\Backend\Http\Controllers\Administration\UserController;
 use Modules\Backend\Http\Controllers\Authentication\AuthenticatedSessionController;
 use Modules\Backend\Http\Controllers\Authentication\ConfirmablePasswordController;
 use Modules\Backend\Http\Controllers\Authentication\EmailVerificationNotificationController;
@@ -8,7 +10,9 @@ use Modules\Backend\Http\Controllers\Authentication\NewPasswordController;
 use Modules\Backend\Http\Controllers\Authentication\PasswordResetLinkController;
 use Modules\Backend\Http\Controllers\Authentication\RegisteredUserController;
 use Modules\Backend\Http\Controllers\Authentication\VerifyEmailController;
-use Illuminate\Support\Facades\Route;
+use Modules\Backend\Http\Controllers\Authorization\PermissionController;
+use Modules\Backend\Http\Controllers\Authorization\RoleController;
+use Modules\Backend\Http\Controllers\BackendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Authentication Route
+ */
 Route::prefix('backend')->name('backend.')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create'])
         ->middleware('guest')
@@ -76,6 +83,16 @@ Route::prefix('backend')->name('backend.')->group(function () {
         ->name('logout');
 });
 
-Route::prefix('backend')->group(function() {
-    Route::get('/', 'BackendController@index');
+Route::prefix('backend')->group(function () {
+    Route::get('/', [BackendController::class, 'index']);
+    /**
+     * Administration Route
+     */
+    Route::get('administration', [BackendController::class, 'index'])->name('administration');
+    Route::prefix('administration')->group(function () {
+        Route::resource('users', UserController::class);
+        Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionController::class);
+
+    });
 });

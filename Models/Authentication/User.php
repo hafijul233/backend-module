@@ -94,6 +94,6 @@ class User extends Authenticatable
      */
     public function getIsAdminAttribute(): bool
     {
-        return $this->hasRole('Super Administrator') ? true : false;
+        return $this->hasRole('Super Administration') ? true : false;
     }
 }

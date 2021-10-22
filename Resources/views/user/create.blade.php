@@ -1,0 +1,44 @@
+@extends('layouts.app')
+
+@section('title', 'Add User')
+
+@section('keywords', 'Register, sing up')
+
+@section('description', 'user tries to login in to system')
+
+@push('component-styles')
+
+@endpush
+
+@push('page-styles')
+
+@endpush
+
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName()))
+
+@section('options')
+    {!! \Html::backButton('users.index') !!}
+@endsection
+
+@section('content')
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                {!! Html::cardHeader('Add User',
+                        'mdi mdi-account-group-outline',
+                         'DataTables has most features enabled by default.') !!}
+                {!! \Form::open(['route' => 'users.store','files' => true, 'id' => 'user-form']) !!}
+                @include('backend.preference.user.form')
+                {!! \Form::close() !!}
+            </div>
+        </div>
+    </div>
+@endsection
+
+@push('component-scripts')
+
+@endpush
+
+
+@push('page-scripts')
+@endpush

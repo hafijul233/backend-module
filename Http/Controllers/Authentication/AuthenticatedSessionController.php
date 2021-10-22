@@ -36,11 +36,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('backend::authentication.login');
+        return view('backend::auth.login');
     }
 
     /**
-     * Handle an incoming authentication request.
+     * Handle an incoming auth request.
      *
      * @param LoginRequest $request
      * @return RedirectResponse

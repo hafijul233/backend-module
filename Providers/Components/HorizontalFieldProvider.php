@@ -42,7 +42,7 @@ class HorizontalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('hText', 'forms.horizon.text', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hText', 'backend::forms.horizon.text', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
         /**
          * @parem string $name
          * @parem string $label
@@ -50,7 +50,7 @@ class HorizontalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('hEmail', 'forms.horizon.email', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hEmail', 'backend::forms.horizon.email', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
 
 
@@ -60,7 +60,7 @@ class HorizontalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('hSearch', 'forms.horizon.search', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hSearch', 'backend::forms.horizon.search', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
         /**
          * @parem string $name
@@ -68,7 +68,7 @@ class HorizontalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('hTel', 'forms.horizon.tel', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hTel', 'backend::forms.horizon.tel', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
         /**
          * @parem string $name
@@ -76,32 +76,7 @@ class HorizontalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('hNumber', 'forms.horizon.number', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
-
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('hDate', 'forms.horizon.date', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('hUrl', 'forms.horizon.url', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('hFile', 'forms.horizon.file', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hNumber', 'backend::forms.horizon.number', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
 
         /**
@@ -110,7 +85,32 @@ class HorizontalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('hTextarea', 'forms.horizon.textarea', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hDate', 'backend::forms.horizon.date', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('hUrl', 'backend::forms.horizon.url', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('hFile', 'backend::forms.horizon.file', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('hTextarea', 'backend::forms.horizon.textarea', ['name', 'label', 'default' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
 
 
@@ -124,7 +124,7 @@ class HorizontalFieldProvider extends ServiceProvider
          * @param  array  $optionsAttributes
          * @param  array  $optgroupsAttributes
          */
-        Form::component('hSelect', 'forms.horizon.select', ['name', 'label', 'data', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hSelect', 'backend::forms.horizon.select', ['name', 'label', 'data', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
         /**
          * Create a select range field.
@@ -137,7 +137,7 @@ class HorizontalFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('hSelectRange', 'forms.horizon.selectrange', ['name', 'label', 'begin', 'end', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hSelectRange', 'backend::forms.horizon.selectrange', ['name', 'label', 'begin', 'end', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
 
         /**
@@ -151,7 +151,7 @@ class HorizontalFieldProvider extends ServiceProvider
          *
          * @return mixed
          */
-        Form::component('hSelectYear', 'forms.horizon.selectyear', ['name', 'label', 'begin', 'end', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hSelectYear', 'backend::forms.horizon.selectyear', ['name', 'label', 'begin', 'end', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
 
         /**
@@ -164,7 +164,7 @@ class HorizontalFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('hSelectMonth', 'forms.horizon.selectmonth', ['name', 'label', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
+        Form::component('hSelectMonth', 'backend::forms.horizon.selectmonth', ['name', 'label', 'selected' => null, 'required' => false, 'col_size' => 2, 'attributes' => []]);
 
 
         /**
@@ -177,7 +177,7 @@ class HorizontalFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('hCheckbox', 'forms.horizon.checkbox', ['name', 'label', 'checked', 'required' => false,  'col_size' => 2, 'attributes' => []]);
+        Form::component('hCheckbox', 'backend::forms.horizon.checkbox', ['name', 'label', 'checked', 'required' => false,  'col_size' => 2, 'attributes' => []]);
 
 
 
@@ -191,6 +191,6 @@ class HorizontalFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('hRadio', 'forms.horizon.radio', ['name', 'label', 'checked' => null, 'required' => false,  'col_size' => 2, 'attributes' => []]);
+        Form::component('hRadio', 'backend::forms.horizon.radio', ['name', 'label', 'checked' => null, 'required' => false,  'col_size' => 2, 'attributes' => []]);
     }
 }

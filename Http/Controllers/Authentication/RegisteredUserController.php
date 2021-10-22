@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('backend::authentication.register');
+        return view('backend::auth.register');
     }
 
     /**
