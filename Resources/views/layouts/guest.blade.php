@@ -19,7 +19,7 @@
 </head>
 <body class="hold-transition @yield('body-class')">
 @yield('content')
-@include('backend::partials.guest.footer')
+@include('backend::partials.footer')
 <!-- jQuery -->
 <script src="{{ asset('modules/backend/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->

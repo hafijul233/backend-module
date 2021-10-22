@@ -17,21 +17,34 @@
 <!-- Page Level Script -->
     @include('backend::layouts.includes.head-script')
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <a href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="card">
-        <div class="card-body login-card-body">
+<body class="hold-transition @yield('body-class')">
+<div class="wrapper">
+    <!-- Preloader -->
+    @include('backend::partials.preloader')
+    <!-- Navbar -->
+    @include('backend::partials.navbar')
+
+<!-- Main Sidebar Container -->
+    @include('backend::partials.menu-sidebar')
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        @include('backend::partials.content-header')
+        <!-- Main content -->
+        <div class="content">
             @yield('content')
         </div>
-        <!-- /.login-card-body -->
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    @include('backend::partials.control-sidebar')
+    <!-- Main Footer -->
+    @include('backend::partials.main-footer')
 </div>
-<!-- /.login-box -->
-@include('backend::partials.guest.footer')
+<!-- ./wrapper -->
 <!-- jQuery -->
 <script src="{{ asset('modules/backend/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
