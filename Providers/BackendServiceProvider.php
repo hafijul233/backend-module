@@ -60,6 +60,20 @@ class BackendServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
         );
+
+        $this->registerPackageConfig();
+    }
+
+    /**
+     * Register Package Customize Configuration
+     *
+     * @return void
+     */
+    protected function registerPackageConfig()
+    {
+        $this->mergeConfigFrom(module_path($this->moduleName, 'Config/auth.php'), 'auth');
+        $this->mergeConfigFrom(module_path($this->moduleName, 'Config/breadcrumbs.php'), 'breadcrumbs');
+        $this->mergeConfigFrom(module_path($this->moduleName, 'Config/columnsortable.php'), 'columnsortable');
     }
 
     /**

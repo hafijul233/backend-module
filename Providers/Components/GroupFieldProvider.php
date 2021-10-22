@@ -50,7 +50,7 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gText', 'backend::forms.group.text', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gText', 'backend::forms.group.text', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
         /**
          * @parem string $name
          * @parem string $label
@@ -58,7 +58,7 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gEmail', 'backend::forms.group.email', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gEmail', 'backend::forms.group.email', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
         /**
          * @parem string $name
@@ -66,7 +66,7 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gPassword', 'backend::forms.group.password', ['name', 'label', 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gPassword', 'backend::forms.group.password', ['name', 'label', 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
         /**
          * @parem string $name
@@ -74,32 +74,7 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gRange', 'backend::forms.group.range', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
-
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('gSearch', 'backend::forms.group.search', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('gTel', 'backend::forms.group.tel', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('gNumber', 'backend::forms.group.number', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gRange', 'backend::forms.group.range', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
         /**
@@ -108,7 +83,23 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gDate', 'backend::forms.group.date', ['name', 'label', 'default' => date('Y-m-d'), 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gSearch', 'backend::forms.group.search', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('gTel', 'backend::forms.group.tel', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('gNumber', 'backend::forms.group.number', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
         /**
@@ -117,15 +108,7 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gUrl', 'backend::forms.group.url', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
-
-        /**
-         * @parem string $name
-         * @parem string $label
-         * @parem bool $required
-         * @parem array $attributes
-         */
-        Form::component('gFile', 'backend::forms.group.file', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gDate', 'backend::forms.group.date', ['name', 'label', 'default' => date('Y-m-d'), 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
         /**
@@ -134,7 +117,24 @@ class GroupFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        Form::component('gTextarea', 'backend::forms.group.textarea', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gUrl', 'backend::forms.group.url', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('gFile', 'backend::forms.group.file', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
+
+
+        /**
+         * @parem string $name
+         * @parem string $label
+         * @parem bool $required
+         * @parem array $attributes
+         */
+        Form::component('gTextarea', 'backend::forms.group.textarea', ['name', 'label', 'default' => null, 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
 
@@ -148,7 +148,7 @@ class GroupFieldProvider extends ServiceProvider
          * @param  array  $optionsAttributes
          * @param  array  $optgroupsAttributes
          */
-        Form::component('gSelect', 'backend::forms.group.select', ['name', 'label', 'data', 'selected', 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gSelect', 'backend::forms.group.select', ['name', 'label', 'data', 'selected', 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
         /**
          * Create a select range field.
@@ -161,7 +161,7 @@ class GroupFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('gSelectRange', 'backend::forms.group.selectrange', ['name', 'label', 'begin', 'end', 'selected', 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gSelectRange', 'backend::forms.group.selectrange', ['name', 'label', 'begin', 'end', 'selected', 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
         /**
@@ -175,7 +175,7 @@ class GroupFieldProvider extends ServiceProvider
          *
          * @return mixed
          */
-        Form::component('gSelectYear', 'backend::forms.group.selectyear', ['name', 'label', 'begin', 'end', 'selected' => date('Y'), 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gSelectYear', 'backend::forms.group.selectyear', ['name', 'label', 'begin', 'end', 'selected' => date('Y'), 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
         /**
@@ -188,7 +188,7 @@ class GroupFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('gSelectMonth', 'backend::forms.group.selectmonth', ['name', 'label', 'selected' => date('m'), 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gSelectMonth', 'backend::forms.group.selectmonth', ['name', 'label', 'selected' => date('m'), 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
         /**
@@ -201,7 +201,7 @@ class GroupFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('gCheckbox', 'backend::forms.group.checkbox', ['name', 'label', 'checked', 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gCheckbox', 'backend::forms.group.checkbox', ['name', 'label', 'checked', 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
 
 
@@ -215,7 +215,7 @@ class GroupFieldProvider extends ServiceProvider
          *
          * @return \Illuminate\Support\HtmlString
          */
-        Form::component('gRadio', 'backend::forms.group.radio', ['name', 'label', 'checked', 'required' => false, 'icon' => null, 'attributes' => []]);
+        Form::component('gRadio', 'backend::forms.group.radio', ['name', 'label', 'checked', 'required' => false, 'icon' => null, 'position' => 'before', 'attributes' => []]);
 
     }
 }

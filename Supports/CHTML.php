@@ -41,4 +41,16 @@ class CHTML
 
         return new HtmlString($HTML);
     }
+
+    /**
+     * @param $collection
+     * @param string $type [default, simple]
+     * @return mixed
+     */
+    public static function pagination($collection, string $type = 'default')
+    {
+        return $collection->onEachSide(2)
+            ->appends(request()->query())
+            ->links('backend::layouts.' . $type . '-paginate');
+    }
 }

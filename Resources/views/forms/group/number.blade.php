@@ -10,14 +10,25 @@
     $options['required'] = 'required';
     @endphp
     <div class="input-group">
-        <div class="input-group-prepend">
+        @if(isset($position) && $position = 'before')
+            <div class="input-group-prepend">
             <span class="input-group-text">
                 @if(!empty($icon))
-                <i class="{{ $icon }}"></i>
+                    <i class="{{ $icon }}"></i>
                 @endif
             </span>
-        </div>
+            </div>
+        @endif
         {!! Form::number($name, $default, array_merge($options, $attributes)) !!}
+            @if(isset($position) && $position = 'after')
+                <div class="input-group-prepend">
+            <span class="input-group-text">
+                @if(!empty($icon))
+                    <i class="{{ $icon }}"></i>
+                @endif
+            </span>
+                </div>
+            @endif
     {!! Form::nError($name, $msg) !!}
     </div>
 </div>

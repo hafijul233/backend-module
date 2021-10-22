@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Modules\Backend\Http\Controllers\Administration\UserController;
 use Modules\Backend\Http\Controllers\Authentication\AuthenticatedSessionController;
@@ -13,6 +14,7 @@ use Modules\Backend\Http\Controllers\Authentication\VerifyEmailController;
 use Modules\Backend\Http\Controllers\Authorization\PermissionController;
 use Modules\Backend\Http\Controllers\Authorization\RoleController;
 use Modules\Backend\Http\Controllers\BackendController;
+use Modules\Backend\Http\Controllers\Common\ModelSoftDeleteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +87,23 @@ Route::prefix('backend')->name('backend.')->group(function () {
 
 Route::prefix('backend')->group(function () {
     Route::get('/', [BackendController::class, 'index']);
+    /**
+     * Server Application Cache
+     */
+    Route::get('cache-clear', function () {
+        Artisan::call('optimize:clear');
+        Artisan::call('optimize');
+    });
+
+    /**
+     * Common Operations
+     */
+    Route::prefix('common')->name('common.')->group(function () {
+        Route::get('delete/{route}/{id}', ModelSoftDeleteController::class)
+            ->name('delete');
+        Route::get('enabled/{modelpath}/{id}', ModelSoftDeleteController::class)
+            ->name('enabled');
+    });
     /**
      * Administration Route
      */
