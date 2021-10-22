@@ -30,7 +30,7 @@
 
 @section('breadcrumbs')
     <nav aria-label="breadcrumb">
-        <h5>Online Documentation</h5>
+        <h5 class="mb-0">Online Documentation</h5>
         <ol class="breadcrumb bg-transparent p-0 mb-0">
             <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Documentation</li>
