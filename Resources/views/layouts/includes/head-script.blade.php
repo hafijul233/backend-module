@@ -1,1 +1,1 @@
-@stack('inline-script')
+@stack('head-script')

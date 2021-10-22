@@ -37,9 +37,9 @@ class MenuServiceProvider extends ServiceProvider
     {
         // Using class based composers...
         View::composer('backend::partials.menu-sidebar', MainSidebarComposer::class);
-        $this->registerComponentMenu();
     }
 
+    //TODO Spatie Laravel-Menu Future
     protected function registerComponentMenu() {
         Menu::macro('backend', function () {
             return Menu::new()
