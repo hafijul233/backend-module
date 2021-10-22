@@ -1,7 +1,13 @@
 {
     "name": "hafijul233/backend-module",
     "type": "laravel-module",
-    "description": "",
+    "description": "Laravel AdminLTE 3 Backend Module using Bootstrap4",
+    "support": {
+        "issues": "https://github.com/hafijul233/backend-module/issues",
+        "wiki": "https://github.com/hafijul233/backend-module/wiki",
+        "source": "https://github.com/hafijul233/backend-module",
+        "docs": "http://hafijulislam.me/projects/backend-module"
+    },
     "keywords": [
         "framework",
         "laravel"
@@ -11,7 +17,8 @@
         {
             "name": "Hafijul Islam",
             "email": "hafijul233@gmail.com",
-            "homepage": "http://www.hafijulislam.me"
+            "homepage": "http://www.hafijulislam.me",
+            "role": "Maintainer"
         }
     ],
     "config": {
@@ -38,7 +45,12 @@
     "autoload": {
         "psr-4": {
             "Modules\\Backend\\": "/"
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/",
+            "/test/",
+            "/tests/"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
