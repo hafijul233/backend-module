@@ -2,6 +2,7 @@
 
 // Note: Laravel will automatically resolve `Breadcrumbs::` without
 // this import. This is nice for IDE syntax and refactoring.
+use Modules\Backend\Models\Authorization\Permission;
 use Modules\Rbac\Models\Role;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
@@ -32,29 +33,10 @@ Breadcrumbs::for('notifications.index', function (BreadcrumbTrail $trail) {
     $trail->push('Notifications', route('notifications.index'));
 });
 
-// Home > Backend >  Dashboard > Frontend
-Breadcrumbs::for('frontend', function (BreadcrumbTrail $trail) {
-    $trail->parent('home');
-    $trail->push('Frontend', route('frontend'));
-});
-
-// Home > Backend >  Dashboard > Frontend > Pages
-Breadcrumbs::for('pages.index', function ($trail) {
-    $trail->parent('frontend');
-    $trail->push('Pages', route('pages.index'));
-});
-
-// Home > Backend >  Dashboard > Frontend > Layouts
-Breadcrumbs::for('layouts.index', function ($trail) {
-    $trail->parent('frontend');
-    $trail->push('Layouts', route('layouts.index'));
-});
-
-
 // Home > Backend >  Dashboard > Preference
 Breadcrumbs::for('administration', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Preference', route('preference'));
+    $trail->push('Preference', route('administration'));
 });
 
 // Home > Backend >  Dashboard > Preference > Settings
@@ -125,14 +107,14 @@ Breadcrumbs::for('permissions.create', function (BreadcrumbTrail $trail) {
 });
 
 // Home > Backend >  Dashboard > Preference > Permissions > [Permission Name]/Details
-Breadcrumbs::for('permissions.show', function (BreadcrumbTrail $trail, $permission) {
+Breadcrumbs::for('permissions.show', function (BreadcrumbTrail $trail, Permission $permission) {
     $trail->parent('permissions.index');
-    $trail->push($permission->name ?? 'Details', route('permissions.show', $permission->id ?? 0));
+    $trail->push($permission->name, route('permissions.show', $permission->id));
 });
 // Home > Backend >  Dashboard > Preference > Permissions > [Permission Name] > Edit
-Breadcrumbs::for('permissions.edit', function (BreadcrumbTrail $trail, $permission) {
+Breadcrumbs::for('permissions.edit', function (BreadcrumbTrail $trail, Permission $permission) {
     $trail->parent('permissions.index');
-    $trail->push('Edit Permission', route('permissions.edit', $permission->id ?? 0));
+    $trail->push('Edit Permission', route('permissions.edit', $permission->id));
 });
 
 // Home > Backend >  Dashboard > Preference > Users

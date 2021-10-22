@@ -28,15 +28,7 @@
 
 @section('body-class', 'sidebar-mini')
 
-@section('breadcrumbs')
-    <nav aria-label="breadcrumb">
-        <h5 class="mb-0">Online Documentation</h5>
-        <ol class="breadcrumb bg-transparent p-0 mb-0">
-            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Documentation</li>
-        </ol>
-    </nav>
-@endsection
+@section('breadcrumbs', \Breadcrumbs::render())
 
 @section('actions')
     <a class="btn btn-dark" href="https://github.com/htmlstreamofficial/stream-dashboard-ui-kit">
@@ -48,8 +40,7 @@
     <div class="container-fluid">
         <div class="card card-default">
             {!! \Html::cardHeader(__('backend::general.preference.permissions.index.title'),
-                    __('backend::general.preference.permissions.icon'),
-                     __('backend::general.preference.permissions.index.detail')) !!}
+                    __('backend::general.preference.permissions.icon')) !!}
             <div class="card-body">
 
                 {!! \Form::open(['route' => 'permissions.index', 'method' => 'get']) !!}
