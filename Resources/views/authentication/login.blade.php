@@ -27,6 +27,8 @@
 
 @endpush
 
+@section('body-class', 'login-page')
+
 @section('content')
     <div class="login-box">
         <div class="login-logo">

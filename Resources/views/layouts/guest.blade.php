@@ -17,7 +17,7 @@
 <!-- Page Level Script -->
     @include('backend::layouts.includes.head-script')
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition @yield('body-class')">
 @yield('content')
 @include('backend::partials.guest.footer')
 <!-- jQuery -->

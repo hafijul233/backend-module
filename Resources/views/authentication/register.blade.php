@@ -27,6 +27,8 @@
 
 @endpush
 
+@section('body-class', 'register-page')
+
 @section('content')
     <div class="register-box">
         <div class="register-logo">
