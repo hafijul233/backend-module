@@ -25,7 +25,8 @@
         "joshbrw/laravel-module-installer": "^2.0",
         "nwidart/laravel-modules": "^8.2",
         "spatie/laravel-menu": "^3.7",
-        "yoeunes/notify": "^1.0"
+        "yoeunes/notify": "^1.0",
+        "laravelcollective/html": "^6.2"
     },
     "extra": {
         "laravel": {
