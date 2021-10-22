@@ -3,7 +3,6 @@
 namespace Modules\Backend\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
 
 class BackendServiceProvider extends ServiceProvider
 {
@@ -42,6 +41,9 @@ class BackendServiceProvider extends ServiceProvider
         $this->app->register(MenuServiceProvider::class);
         $this->app->register(ObserverServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
+        $this->app->register(FormServiceProvider::class);
+        $this->app->register(HtmlServiceProvider::class);
+
     }
 
     /**
@@ -117,10 +119,10 @@ class BackendServiceProvider extends ServiceProvider
     private function registerPublicAssets()
     {
         $this->publishes([module_path($this->moduleName, 'Resources/assets') => public_path('modules/' . $this->moduleNameLower . '/assets'),
-        ], $this->moduleNameLower .'-assets');
+        ], $this->moduleNameLower . '-assets');
 
         $this->publishes([module_path($this->moduleName, 'Resources/plugins') => public_path('modules/' . $this->moduleNameLower . '/plugins'),
-        ], $this->moduleNameLower .'-plugins');
+        ], $this->moduleNameLower . '-plugins');
 
     }
 }
