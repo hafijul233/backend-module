@@ -1,6 +1,6 @@
 @unless ($breadcrumbs->isEmpty())
     <nav aria-label="breadcrumb">
-        <h5 class="mb-0">@yield('title')</h5>
+        <h4 class="mb-0">@yield('title')</h4>
         <ol class="breadcrumb bg-transparent p-0 mb-0">
             @foreach ($breadcrumbs as $breadcrumb)
 

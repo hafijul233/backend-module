@@ -1,6 +1,6 @@
 @extends('backend::layouts.backend')
 
-@section('title', 'Register')
+@section('title', 'Permissions')
 
 @push('meta')
 
@@ -19,7 +19,6 @@
 @endpush
 
 @push('inline-style')
-
 @endpush
 
 @push('head-script')
@@ -31,40 +30,25 @@
 @section('breadcrumbs', \Breadcrumbs::render())
 
 @section('actions')
-    <a class="btn btn-dark" href="https://github.com/htmlstreamofficial/stream-dashboard-ui-kit">
-        <i class="fab fa-github mr-1"></i> Github
-    </a>
+    {!! \Html::linkButton('Add Permission', 'permissions.create', [], 'mdi mdi-plus', 'success') !!}
 @endsection
 
 @section('content')
     <div class="container-fluid">
         <div class="card card-default">
-            {!! \Html::cardHeader(__('backend::general.preference.permissions.index.title'),
-                    __('backend::general.preference.permissions.icon')) !!}
-            <div class="card-body">
-
-                {!! \Form::open(['route' => 'permissions.index', 'method' => 'get']) !!}
-                @csrf
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="input-group mb-3">
-                            {!! \Form::search('search', old('search', (request()->get('search') ?? null)),
-                                ['class' => 'form-control', 'placeholder' =>'Search Permission Name, Guard, Enabled.. etc',
-                                 'aria-label' => 'Search Permission Name', 'aria-describedby' => 'Search Permission Name',
-                                 'id' =>'search']) !!}
-                            <div class="input-group-append">
-                                {!! \Form::submit('Search', ['class' => 'btn btn-primary input-group-right-btn']) !!}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {!! \Form::close() !!}
-
+            <div class="card-body p-0">
+                {!! \Html::cardSearch('search', 'permissions.index', 'Search Permission Display Name, Code, Guard, Status, etc.') !!}
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-display" id="permission-table">
-                        <thead>
+                    <table class="table table-hover mb-0" id="permission-table">
+                        <thead class="thead-light">
                         <tr>
-                            <th>#</th>
+                            <th>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="customCheckbox1"
+                                           value="option1">
+                                    <label for="customCheckbox1" class="custom-control-label"></label>
+                                </div>
+                            </th>
                             <th>@sortablelink('display_name', 'Name')</th>
                             <th>@sortablelink('name', 'Code')</th>
                             <th>@sortablelink('guard_name', 'Guard')</th>
@@ -75,8 +59,18 @@
                         <tbody>
                         @forelse($permissions as $index => $permission)
                             <tr>
-                                <td class="exclude-search">{{ $permissions->firstItem() + $loop->index }}</td>
-                                <td>{{ $permission->display_name }}</td>
+                                <td class="exclude-search">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="customCheckbox1"
+                                               value="option1">
+                                        <label for="customCheckbox1" class="custom-control-label"></label>
+                                    </div>
+                                </td>
+                                <td class="text-left">
+                                    <a href="{{ route('permissions.show', $permission->id) }}">
+                                        {{ $permission->display_name }}
+                                    </a>
+                                </td>
                                 <td>{{ $permission->name }}</td>
                                 <td>{{ $permission->guard_name }}</td>
                                 <td class="text-center exclude-search">
@@ -104,6 +98,8 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="card-footer bg-transparent pb-0">
                 {!! \Modules\Backend\Supports\CHTML::pagination($permissions) !!}
             </div>
         </div>
